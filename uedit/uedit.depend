@@ -1,0 +1,41 @@
+# depslib dependency file v1.0
+1581812183 source:c:\users\cris\desktop\practica1\repositorio\uedit\main.cpp
+	<iostream>
+	<curses.h>
+	"Menu.h"
+
+1581490984 source:c:\users\cris\desktop\practica1\repositorio\uedit\src\nodolistadoble.cpp
+	"NodoListaDoble.h"
+
+1581491066 c:\users\cris\desktop\practica1\repositorio\uedit\include\nodolistadoble.h
+	<iostream>
+
+1581490816 source:c:\users\cris\desktop\practica1\repositorio\uedit\src\listadoble.cpp
+	"ListaDoble.h"
+
+1581491104 c:\users\cris\desktop\practica1\repositorio\uedit\include\listadoble.h
+	<iostream>
+	<cstring>
+	"NodoListaDoble.h"
+
+1581492110 source:c:\users\cris\desktop\practica1\repositorio\uedit\src\nodopila.cpp
+	"NodoPila.h"
+
+1581492355 c:\users\cris\desktop\practica1\repositorio\uedit\include\nodopila.h
+	<iostream>
+
+1581493576 source:c:\users\cris\desktop\practica1\repositorio\uedit\src\pila.cpp
+	"Pila.h"
+
+1581493555 c:\users\cris\desktop\practica1\repositorio\uedit\include\pila.h
+	"NodoPila.h"
+
+1581812220 c:\users\cris\desktop\practica1\repositorio\uedit\include\menu.h
+	<iostream>
+	<curses.h>
+	<string>
+
+1581822153 source:c:\users\cris\desktop\practica1\repositorio\uedit\src\menu.cpp
+	"Menu.h"
+	<string>
+
