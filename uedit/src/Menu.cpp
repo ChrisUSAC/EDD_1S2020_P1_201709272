@@ -1,7 +1,5 @@
 #include "Menu.h"
-#include <string>
-
-using namespace std;
+#include "cursor.h"
 //---------------------------------------------------------------------------------------------
 //metodo constructor
 Menu::Menu()
@@ -125,23 +123,62 @@ void Menu::menuEditor()
     cbreak();
 
     int alto,ancho,pos_x,pos_y; //variables para la creacion de la ventana
-    alto = 40;
-    ancho = 100;
+    int yMax,xMax;
+    yMax = 40;
+    xMax = 100;
+    alto = yMax;
+    ancho = xMax;
     pos_x = pos_y = 0;
 
     WINDOW* win = newwin(alto,ancho,pos_y,pos_x); // instancia de una ventana
     box(win,0,0);
     refresh();
+
+
+    mvwprintw(win,39,4,"^w (Buscar y Remplazar)");
+    mvwprintw(win,39,38,"^c Reportes");
+    mvwprintw(win,39,58,"^s Guardar");
     wrefresh(win);
 
-    mvwprintw(win,3,5,"Este");
-    mvwprintw(win,4,5,"Seria");
-    mvwprintw(win,5,5,"El");
-    mvwprintw(win,6,5,"menu");
-    mvwprintw(win,7,5,"para");
-    mvwprintw(win,8,5,"edicion");
+    //creacion del cursor
+    cursor * p = new cursor(win,1,1,'f');
 
-    int c = getch();
+    //ciclo para la escritura en el editor
+    while(true)
+    {
+        int tecla = p->getmv(); //caracter a evaluar y proceder a imprimirlo
+        char intTecla = tecla;
+
+        if(tecla==27) //tecla de escape, sale del editor y regresa al menuPrincipal
+        {
+            system("cls"); // limpia la pantalla y muestra el menu principal nuevamente
+            menuPrincipal();
+            break;
+        }
+        //evaluar si se utilizo el borrar
+        else if(tecla==8)
+        {
+            p->settCaracter(' '); // simular borrado con un caracter de espacio
+            p->mvizq();
+            p->display();
+        }
+        else
+        {   //imprimimos el caracter
+            p->display();
+            //evaluamos si se termino la linea
+            if(p->getxLoc()!=p->getxMax())
+            {
+                p->mvder();
+            }
+
+        }
+
+
+
+
+        wrefresh(win);
+    }
+
     endwin(); // destruye la ventana del menuPrincipal y abre la ventana del siguiente menu
 
 }

@@ -30,12 +30,21 @@
 1581493555 c:\users\cris\desktop\practica1\repositorio\uedit\include\pila.h
 	"NodoPila.h"
 
-1581812220 c:\users\cris\desktop\practica1\repositorio\uedit\include\menu.h
+1581882147 c:\users\cris\desktop\practica1\repositorio\uedit\include\menu.h
 	<iostream>
 	<curses.h>
 	<string>
+	"cursor.h"
 
-1581822153 source:c:\users\cris\desktop\practica1\repositorio\uedit\src\menu.cpp
+1581901339 source:c:\users\cris\desktop\practica1\repositorio\uedit\src\menu.cpp
 	"Menu.h"
+	"cursor.h"
+
+1581900636 c:\users\cris\desktop\practica1\repositorio\uedit\include\cursor.h
 	<string>
+	<curses.h>
+	<stdlib.h>
+
+1581902187 source:c:\users\cris\desktop\practica1\repositorio\uedit\src\cursor.cpp
+	"cursor.h"
 

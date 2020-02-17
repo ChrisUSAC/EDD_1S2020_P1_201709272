@@ -39,12 +39,14 @@
 		<Unit filename="include/NodoListaDoble.h" />
 		<Unit filename="include/NodoPila.h" />
 		<Unit filename="include/Pila.h" />
+		<Unit filename="include/cursor.h" />
 		<Unit filename="main.cpp" />
 		<Unit filename="src/ListaDoble.cpp" />
 		<Unit filename="src/Menu.cpp" />
 		<Unit filename="src/NodoListaDoble.cpp" />
 		<Unit filename="src/NodoPila.cpp" />
 		<Unit filename="src/Pila.cpp" />
+		<Unit filename="src/cursor.cpp" />
 		<Extensions>
 			<code_completion />
 			<envvars />

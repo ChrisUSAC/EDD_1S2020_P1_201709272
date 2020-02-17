@@ -3,6 +3,8 @@
 #include <iostream>
 #include <curses.h> //libreria utilizada para los menus
 #include <string>
+#include "cursor.h"
+
 using namespace std;
 
 class Menu
