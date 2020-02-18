@@ -4,6 +4,8 @@
 
 //Declaracion de la lista que tiene a los caracteres de la aplicacion
 static ListaDoble* ListaCaracteres = new ListaDoble();
+static Pila* CambiosRealizados = new Pila();
+static Pila* CambiosRevertidos = new Pila();
 static int idInsercion = 0;
 
 //---------------------------------------------------------------------------------------------
@@ -193,6 +195,7 @@ void Menu::menuEditor()
         {
             metodoBuscarRemplazar(win,p);
             endwin(); // destruye la ventana
+            clear(); // limpia la pantalla y muestra el menu principal nuevamente
             //abrir la ventana con los caracteres de la lista y los remplazos
             repintarEditor();
 
@@ -204,10 +207,44 @@ void Menu::menuEditor()
         else if(tecla==24) //ctrl+x  funcion de escape
         {
             ListaCaracteres->resetear();
+            CambiosRealizados->resetear();
+            CambiosRevertidos->resetear();
             endwin(); // destruye la ventana
             clear(); // limpia la pantalla y muestra el menu principal nuevamente
             menuPrincipal();
             break;
+        }
+        else if(tecla==26) //ctrl+z  revertir un cambio
+        {
+            NodoPila* aux = CambiosRealizados->pop();
+            if(aux!=0)
+            {
+                CambiosRevertidos->push(aux->palabraRemp,aux->palabraBus,"Revertido","NULL",0);
+                ListaCaracteres->buscarRemplazar(aux->palabraRemp,aux->palabraBus);
+                ListaCaracteres->graficar();
+                CambiosRevertidos->graficar2();
+            }
+            endwin(); // destruye la ventana
+            //abrir la ventana con los caracteres de la lista y los remplazos
+            clear();
+            repintarEditor();
+
+        }
+        else if(tecla==25) //ctrl+y restablecer un cambio
+        {
+            NodoPila* aux = CambiosRevertidos->pop();
+            if(aux!=0)
+            {
+                CambiosRealizados->push(aux->palabraBus,aux->palabraRemp,"NO Revertido","NULL",0);
+                ListaCaracteres->buscarRemplazar(aux->palabraRemp,aux->palabraBus);
+                ListaCaracteres->graficar();
+                CambiosRealizados->graficar();
+            }
+            endwin(); // destruye la ventana
+            //abrir la ventana con los caracteres de la lista y los remplazos
+            clear();
+            repintarEditor();
+
         }
         else
         {   //imprimimos el caracter
@@ -267,7 +304,7 @@ void Menu::metodoBuscarRemplazar(WINDOW* win,cursor* p)
 
         wrefresh(win);
     }
-
+    CambiosRealizados->push(buscar,remplazar,"No Revertido","NULL",0); //push a la pila de cambios realizados
     ListaCaracteres->buscarRemplazar(buscar,remplazar); //llamada al metodo buscar y remplazar
     ListaCaracteres->graficar();
 }
@@ -366,6 +403,7 @@ void Menu::repintarEditor()
         {
             metodoBuscarRemplazar(win,p);
             endwin(); // destruye la ventana
+            clear(); // limpia la pantalla y muestra el menu principal nuevamente
             //abrir la ventana con los caracteres de la lista y los remplazos
             repintarEditor();
 
@@ -377,10 +415,44 @@ void Menu::repintarEditor()
         else if(tecla==24) //ctrl+x  funcion de escape
         {
             ListaCaracteres->resetear();
+            CambiosRealizados->resetear();
+            CambiosRevertidos->resetear();
             endwin(); // destruye la ventana
             clear(); // limpia la pantalla y muestra el menu principal nuevamente
             menuPrincipal();
             break;
+        }
+        else if(tecla==26) //ctrl+z  revertir un cambio
+        {
+            NodoPila* aux = CambiosRealizados->pop();
+            if(aux!=0)
+            {
+                CambiosRevertidos->push(aux->palabraRemp,aux->palabraBus,"Revertido","NULL",0);
+                ListaCaracteres->buscarRemplazar(aux->palabraRemp,aux->palabraBus);
+                ListaCaracteres->graficar();
+                CambiosRevertidos->graficar2();
+            }
+            endwin(); // destruye la ventana
+            //abrir la ventana con los caracteres de la lista y los remplazos
+            clear();
+            repintarEditor();
+
+        }
+        else if(tecla==25) //ctrl+y restablecer un cambio
+        {
+            NodoPila* aux = CambiosRevertidos->pop();
+            if(aux!=0)
+            {
+                CambiosRealizados->push(aux->palabraBus,aux->palabraRemp,"NO Revertido","NULL",0);
+                ListaCaracteres->buscarRemplazar(aux->palabraRemp,aux->palabraBus);
+                ListaCaracteres->graficar();
+                CambiosRealizados->graficar();
+            }
+            endwin(); // destruye la ventana
+            //abrir la ventana con los caracteres de la lista y los remplazos
+            clear();
+            repintarEditor();
+
         }
         else
         {   //imprimimos el caracter

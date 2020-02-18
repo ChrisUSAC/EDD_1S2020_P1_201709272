@@ -1,14 +1,16 @@
 #ifndef PILA_H
 #define PILA_H
 #include "NodoPila.h" // importacion del NodoPila
+#include<iostream>
+#include<fstream>
 
 class Pila
 {
     public:
         Pila();
         virtual ~Pila();
-        void push(string palabraBus, string palabraRemp, bool estado, string palabra, int posicion); // metodo que inserta en la pila
-        void pop(); // metodo que elimina de la pila
+        void push(string palabraBus, string palabraRemp, string estado, string palabra, int posicion); // metodo que inserta en la pila
+        NodoPila* pop(); // metodo que elimina de la pila
         void imprimir(); // metodo para imprimir en consola
 
         //atributos de la pila
@@ -17,6 +19,11 @@ class Pila
 
         void graficar(); // metodos para el graphiz
         void escribir();
+
+        void graficar2(); //para graficar la otra pila
+        void escribir2();
+
+        void resetear(); //resetea la pila
 
     protected:
 

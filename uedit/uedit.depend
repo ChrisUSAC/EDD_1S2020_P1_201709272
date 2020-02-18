@@ -22,17 +22,19 @@
 	<fstream>
 	"NodoListaDoble.h"
 
-1581492110 source:c:\users\cris\desktop\practica1\repositorio\uedit\src\nodopila.cpp
+1582005800 source:c:\users\cris\desktop\practica1\repositorio\uedit\src\nodopila.cpp
 	"NodoPila.h"
 
-1581492355 c:\users\cris\desktop\practica1\repositorio\uedit\include\nodopila.h
+1582005792 c:\users\cris\desktop\practica1\repositorio\uedit\include\nodopila.h
 	<iostream>
 
-1581493576 source:c:\users\cris\desktop\practica1\repositorio\uedit\src\pila.cpp
+1582017100 source:c:\users\cris\desktop\practica1\repositorio\uedit\src\pila.cpp
 	"Pila.h"
 
-1581493555 c:\users\cris\desktop\practica1\repositorio\uedit\include\pila.h
+1582009292 c:\users\cris\desktop\practica1\repositorio\uedit\include\pila.h
 	"NodoPila.h"
+	<iostream>
+	<fstream>
 
 1581995468 c:\users\cris\desktop\practica1\repositorio\uedit\include\menu.h
 	<iostream>
@@ -42,7 +44,7 @@
 	"ListaDoble.h"
 	"Pila.h"
 
-1582002160 source:c:\users\cris\desktop\practica1\repositorio\uedit\src\menu.cpp
+1582016974 source:c:\users\cris\desktop\practica1\repositorio\uedit\src\menu.cpp
 	"Menu.h"
 	"cursor.h"
 

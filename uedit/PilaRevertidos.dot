@@ -1,0 +1,11 @@
+digraph p{ 
+rankdir=LR 
+node[ shape = box] 
+0[label = "Palabra Buscada a
+Remplazada Por 1
+
+Estado Revertido
+Palabra NULL
+Posicion 0
+" width=2.0, fillcolor = red, style = filled ]; 
+}

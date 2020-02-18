@@ -10,7 +10,7 @@ class NodoPila
     public:
 
         //metodo constructor
-        NodoPila(string palabraBus, string palabraRemp, bool estado, string palabra, int posicion);
+        NodoPila(string palabraBus, string palabraRemp, string estado, string palabra, int posicion);
         //metodo destructor
         virtual ~NodoPila();
 
@@ -18,7 +18,7 @@ class NodoPila
 
         //datos de la pila
         string palabraBus, palabraRemp, palabra;
-        bool estado;
+        string estado;
         int posicion;
 
     protected:
