@@ -4,8 +4,8 @@
 
 //Declaracion de la lista que tiene a los caracteres de la aplicacion
 static ListaDoble* ListaCaracteres = new ListaDoble();
-static Pila* CambiosRealizados = new Pila();
-static Pila* CambiosRevertidos = new Pila();
+Pila* CambiosRealizados = new Pila();
+Pila* CambiosRevertidos = new Pila();
 static int idInsercion = 0;
 
 //---------------------------------------------------------------------------------------------
@@ -535,6 +535,23 @@ void Menu::metodoReportes(WINDOW* win, cursor* p)
         }
         if(tecla==51) //numero 3 reporte lista simple del log de cambios ordenada alfabeticamente
         {
+            //instanciar dos pilas una para cada reporte
+            Pila* buscadas = CambiosRealizados;
+
+            //lista Simple enlazada que mostrara el reporte de los cambios realizados
+            Lista* listaSimple = new Lista();
+            Lista* listaSimple2 = new Lista();
+
+            while(buscadas->cima!=0)
+            {
+                NodoPila* aux = buscadas->pop();
+                listaSimple->insertar(aux->palabraBus,aux->palabraRemp);
+                listaSimple2->insertar(aux->palabraRemp,aux->palabraBus);
+            }
+
+            listaSimple->graficar();
+            listaSimple2->graficar2();
+
         }
         else if(tecla==24) //si presiona ctrl+x cancelar ejecucion del metodo
         {

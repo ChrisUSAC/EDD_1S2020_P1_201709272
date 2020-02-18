@@ -1,0 +1,7 @@
+digraph G{ 
+rankdir=LR 
+node[ shape = box] 
+0[label = "martes
+Remplazada por: miercoles
+" width=2.0 , fillcolor=red ,style = filled]; 
+}

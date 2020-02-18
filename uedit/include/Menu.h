@@ -6,6 +6,7 @@
 #include "cursor.h"
 #include "ListaDoble.h"
 #include "Pila.h"
+#include "Lista.h"
 
 using namespace std;
 
