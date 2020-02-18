@@ -25,6 +25,7 @@ class cursor
         int getyLoc();//retorna posicion actual de y
         int getxMax();
         int getyMax();
+        char getCaracter();
 
         //setters
         void settxLoc(int x);

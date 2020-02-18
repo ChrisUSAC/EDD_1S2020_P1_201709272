@@ -1,11 +1,12 @@
 #include "NodoListaDoble.h"
 //------------------------------------------------------------------------------------------------------
 //metodo constructor
-NodoListaDoble::NodoListaDoble(char c)
+NodoListaDoble::NodoListaDoble(char c,string id)
 {
     sig = 0;
     ant = 0;
     this->c = c;
+    this->id = id;
 }
 //------------------------------------------------------------------------------------------------------
 //metodo destructor

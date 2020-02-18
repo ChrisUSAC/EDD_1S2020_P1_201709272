@@ -4,18 +4,22 @@
 	<curses.h>
 	"Menu.h"
 
-1581490984 source:c:\users\cris\desktop\practica1\repositorio\uedit\src\nodolistadoble.cpp
+1581973394 source:c:\users\cris\desktop\practica1\repositorio\uedit\src\nodolistadoble.cpp
 	"NodoListaDoble.h"
 
-1581491066 c:\users\cris\desktop\practica1\repositorio\uedit\include\nodolistadoble.h
+1581973468 c:\users\cris\desktop\practica1\repositorio\uedit\include\nodolistadoble.h
 	<iostream>
+	<string>
 
-1581490816 source:c:\users\cris\desktop\practica1\repositorio\uedit\src\listadoble.cpp
+1582001250 source:c:\users\cris\desktop\practica1\repositorio\uedit\src\listadoble.cpp
 	"ListaDoble.h"
 
-1581491104 c:\users\cris\desktop\practica1\repositorio\uedit\include\listadoble.h
+1582001148 c:\users\cris\desktop\practica1\repositorio\uedit\include\listadoble.h
 	<iostream>
 	<cstring>
+	<stdlib.h>
+	<time.h>
+	<fstream>
 	"NodoListaDoble.h"
 
 1581492110 source:c:\users\cris\desktop\practica1\repositorio\uedit\src\nodopila.cpp
@@ -30,21 +34,23 @@
 1581493555 c:\users\cris\desktop\practica1\repositorio\uedit\include\pila.h
 	"NodoPila.h"
 
-1581882147 c:\users\cris\desktop\practica1\repositorio\uedit\include\menu.h
+1581995468 c:\users\cris\desktop\practica1\repositorio\uedit\include\menu.h
 	<iostream>
 	<curses.h>
 	<string>
 	"cursor.h"
+	"ListaDoble.h"
+	"Pila.h"
 
-1581901339 source:c:\users\cris\desktop\practica1\repositorio\uedit\src\menu.cpp
+1582002160 source:c:\users\cris\desktop\practica1\repositorio\uedit\src\menu.cpp
 	"Menu.h"
 	"cursor.h"
 
-1581900636 c:\users\cris\desktop\practica1\repositorio\uedit\include\cursor.h
+1581965466 c:\users\cris\desktop\practica1\repositorio\uedit\include\cursor.h
 	<string>
 	<curses.h>
 	<stdlib.h>
 
-1581902187 source:c:\users\cris\desktop\practica1\repositorio\uedit\src\cursor.cpp
+1581965529 source:c:\users\cris\desktop\practica1\repositorio\uedit\src\cursor.cpp
 	"cursor.h"
 
