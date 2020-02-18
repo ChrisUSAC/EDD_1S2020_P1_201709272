@@ -11,10 +11,10 @@
 	<iostream>
 	<string>
 
-1582001250 source:c:\users\cris\desktop\practica1\repositorio\uedit\src\listadoble.cpp
+1582044527 source:c:\users\cris\desktop\practica1\repositorio\uedit\src\listadoble.cpp
 	"ListaDoble.h"
 
-1582001148 c:\users\cris\desktop\practica1\repositorio\uedit\include\listadoble.h
+1582044270 c:\users\cris\desktop\practica1\repositorio\uedit\include\listadoble.h
 	<iostream>
 	<cstring>
 	<stdlib.h>
@@ -28,7 +28,7 @@
 1582005792 c:\users\cris\desktop\practica1\repositorio\uedit\include\nodopila.h
 	<iostream>
 
-1582017100 source:c:\users\cris\desktop\practica1\repositorio\uedit\src\pila.cpp
+1582048071 source:c:\users\cris\desktop\practica1\repositorio\uedit\src\pila.cpp
 	"Pila.h"
 
 1582009292 c:\users\cris\desktop\practica1\repositorio\uedit\include\pila.h
@@ -36,7 +36,7 @@
 	<iostream>
 	<fstream>
 
-1581995468 c:\users\cris\desktop\practica1\repositorio\uedit\include\menu.h
+1582050948 c:\users\cris\desktop\practica1\repositorio\uedit\include\menu.h
 	<iostream>
 	<curses.h>
 	<string>
@@ -44,7 +44,7 @@
 	"ListaDoble.h"
 	"Pila.h"
 
-1582016974 source:c:\users\cris\desktop\practica1\repositorio\uedit\src\menu.cpp
+1582052023 source:c:\users\cris\desktop\practica1\repositorio\uedit\src\menu.cpp
 	"Menu.h"
 	"cursor.h"
 

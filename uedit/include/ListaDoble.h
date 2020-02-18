@@ -28,6 +28,7 @@ class ListaDoble
         void resetear(); //resetea la lista
 
         void buscarRemplazar(string buscada, string remplazar); // metodo para buscar y remplazar en la lista la palabra buscada
+        bool buscarRemplazarPila(string buscada, string remplazar); // ordenar pilas
 
         NodoListaDoble* primero; // puntero que indica cual es el primer nodo de la lista
         NodoListaDoble* ultimo; // puntero que indica cual es el ultimo nodo en la lista

@@ -189,7 +189,11 @@ void Menu::menuEditor()
         }
         else if(tecla==3) //ctrl+c funcion de reportes
         {
-            ListaCaracteres->graficar();
+            metodoReportes(win,p);
+            endwin(); // destruye la ventana
+            clear(); // limpia la pantalla y muestra el menu principal nuevamente
+            //abrir la ventana con los caracteres de la lista y los remplazos
+            repintarEditor();
         }
         else if(tecla==23) //ctrl+w funcion buscar y remplazar
         {
@@ -219,8 +223,12 @@ void Menu::menuEditor()
             NodoPila* aux = CambiosRealizados->pop();
             if(aux!=0)
             {
-                CambiosRevertidos->push(aux->palabraRemp,aux->palabraBus,"Revertido","NULL",0);
-                ListaCaracteres->buscarRemplazar(aux->palabraRemp,aux->palabraBus);
+
+                bool comfirmar = ListaCaracteres->buscarRemplazarPila(aux->palabraRemp,aux->palabraBus);
+                if(comfirmar)
+                {
+                    CambiosRevertidos->push(aux->palabraBus,aux->palabraRemp,"Revertido","NULL",0);
+                }
                 ListaCaracteres->graficar();
                 CambiosRevertidos->graficar2();
             }
@@ -235,8 +243,20 @@ void Menu::menuEditor()
             NodoPila* aux = CambiosRevertidos->pop();
             if(aux!=0)
             {
-                CambiosRealizados->push(aux->palabraBus,aux->palabraRemp,"NO Revertido","NULL",0);
-                ListaCaracteres->buscarRemplazar(aux->palabraRemp,aux->palabraBus);
+
+                bool comfirmar = ListaCaracteres->buscarRemplazarPila(aux->palabraBus,aux->palabraRemp);
+                if(comfirmar)
+                {
+                    CambiosRealizados->push(aux->palabraBus,aux->palabraRemp,"NO Revertido","NULL",0);
+                }
+                else
+                {
+                    if(aux->palabraRemp=="")
+                    {
+                        CambiosRevertidos->push(aux->palabraBus,aux->palabraRemp,"NO Revertido","NULL",0);
+                    }
+
+                }
                 ListaCaracteres->graficar();
                 CambiosRealizados->graficar();
             }
@@ -397,7 +417,11 @@ void Menu::repintarEditor()
         }
         else if(tecla==3) //ctrl+c funcion de reportes
         {
-            ListaCaracteres->graficar();
+            metodoReportes(win,p);
+            endwin(); // destruye la ventana
+            clear(); // limpia la pantalla y muestra el menu principal nuevamente
+            //abrir la ventana con los caracteres de la lista y los remplazos
+            repintarEditor();
         }
         else if(tecla==23) //ctrl+w funcion buscar y remplazar
         {
@@ -427,8 +451,12 @@ void Menu::repintarEditor()
             NodoPila* aux = CambiosRealizados->pop();
             if(aux!=0)
             {
-                CambiosRevertidos->push(aux->palabraRemp,aux->palabraBus,"Revertido","NULL",0);
-                ListaCaracteres->buscarRemplazar(aux->palabraRemp,aux->palabraBus);
+
+                bool comfirmar = ListaCaracteres->buscarRemplazarPila(aux->palabraRemp,aux->palabraBus);
+                if(comfirmar)
+                {
+                    CambiosRevertidos->push(aux->palabraBus,aux->palabraRemp,"Revertido","NULL",0);
+                }
                 ListaCaracteres->graficar();
                 CambiosRevertidos->graficar2();
             }
@@ -443,8 +471,20 @@ void Menu::repintarEditor()
             NodoPila* aux = CambiosRevertidos->pop();
             if(aux!=0)
             {
-                CambiosRealizados->push(aux->palabraBus,aux->palabraRemp,"NO Revertido","NULL",0);
-                ListaCaracteres->buscarRemplazar(aux->palabraRemp,aux->palabraBus);
+
+                bool comfirmar = ListaCaracteres->buscarRemplazarPila(aux->palabraBus,aux->palabraRemp);
+                if(comfirmar)
+                {
+                    CambiosRealizados->push(aux->palabraBus,aux->palabraRemp,"NO Revertido","NULL",0);
+                }
+                else
+                {
+                    if(aux->palabraRemp=="")
+                    {
+                        CambiosRevertidos->push(aux->palabraBus,aux->palabraRemp,"NO Revertido","NULL",0);
+                    }
+
+                }
                 ListaCaracteres->graficar();
                 CambiosRealizados->graficar();
             }
@@ -472,4 +512,35 @@ void Menu::repintarEditor()
     endwin(); // destruye la ventana del menueditor
 
 }
+//---------------------------------------------------------------------------------------------
+void Menu::metodoReportes(WINDOW* win, cursor* p)
+{
+    mvwprintw(win,38,4,"Reportes: 1)Lista 2)Palabras Buscadas 3)Palabras Ordenadas");
 
+    wrefresh(win);
+
+    while(true)
+    {
+        int tecla =wgetch(win); // optiene el caracter presionado en teclado
+        char intTecla = tecla;
+
+        if(tecla==49) //numero 1 reporte de lista
+        {
+            ListaCaracteres->graficar();
+        }
+        if(tecla==50) //numero 2 reporte de log Cambios es decir las dos pilas
+        {
+            CambiosRealizados->graficar();
+            CambiosRevertidos->graficar2();
+        }
+        if(tecla==51) //numero 3 reporte lista simple del log de cambios ordenada alfabeticamente
+        {
+        }
+        else if(tecla==24) //si presiona ctrl+x cancelar ejecucion del metodo
+        {
+            break;
+        }
+
+        wrefresh(win);
+    }
+}

@@ -289,3 +289,93 @@ void ListaDoble::resetear()
     this->primero = this->ultimo = 0;
     this->tam  = 0;
 }
+//------------------------------------------------------------------------------------------------------
+bool ListaDoble::buscarRemplazarPila(string buscada, string remplazar)
+{
+    bool remplazo = false; // variable que devuelve el metodo y confirma que encontro la palabra
+    string unirChars="";
+    int contarCaracteres = 0;
+    int contarPosicion = 0;
+
+    NodoListaDoble* aux = this->primero;
+
+    //recorres toda la lista
+    while(aux!=0)
+    {
+        if(aux->c!=' ')
+        {
+            unirChars += aux->c;
+            contarCaracteres++;
+
+            //evaluar si es la misma palabra, si no es la ultima
+            if(aux->sig!=0)
+            {
+                remplazo=true; //validar que hizo un cambio
+                //evaluamos si es palabra completa, debe tener espacio en el aux->sig
+                if(unirChars==buscada && aux->sig->c==' ')
+                {
+                    //eliminar la palabra en la lista e insertar el remplazo, valida que no sea el primero o el ultimo de la lista el eliminado
+                    NodoListaDoble* aux2 = aux;
+                    int auxContarCaracteres = contarCaracteres;
+                    while(auxContarCaracteres!=0)
+                    {
+
+                        aux2->ant->sig = aux2->sig;
+                        aux2->sig->ant = aux2->ant;
+                        //unir anterior con el siguiente
+                        aux2 = aux2->ant;
+                        auxContarCaracteres--;
+                    }
+                    //insertar la palabra a remplazar desde la pasicion de aux2
+                    for(int i = 0; i<remplazar.length();i ++)
+                    {
+
+                        //creacion del nuevo nodo
+                        NodoListaDoble* r = new NodoListaDoble(remplazar[i],"a"+to_string(idInsercionn));
+                        r->sig = aux2->sig;
+                        r->ant =aux2;
+                        aux2->sig->ant = r;
+                        aux2->sig = r;
+                        aux2 = aux2->sig;
+
+                        tam++; // aumenta el tamano de la lista
+                    }
+
+                }
+
+            }
+            //aqui evaluar la ultima palabra
+            else
+            {
+                //es la ultima palabra
+                if(unirChars==buscada)
+                {
+                    remplazo=true;
+                    int auxContarCaracteres = contarCaracteres;
+                    //while que elimina al final de lista
+                    while(auxContarCaracteres!=0)
+                    {
+                        EliminarUltimo();
+                        auxContarCaracteres--;
+                    }
+                    //insertar al final caracter a caracter
+                    for(int i = 0; i<remplazar.length();i ++)
+                    {
+                        insertarFinal(remplazar[i],"a"+to_string(idInsercionn));
+                    }
+                }
+            }
+        }
+        else
+        {
+            //resetear cuando encuentre espacio en blanco
+            unirChars = "";
+            contarCaracteres = 0;
+        }
+
+        aux = aux->sig;
+        contarPosicion++;
+    }
+    return remplazo;
+}
+

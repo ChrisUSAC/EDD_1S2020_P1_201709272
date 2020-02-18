@@ -2,9 +2,9 @@ digraph p{
 rankdir=LR 
 node[ shape = box] 
 0[label = "Palabra Buscada a
-Remplazada Por 1
+Remplazada Por has
 
-Estado NO Revertido
+Estado No Revertido
 Palabra NULL
 Posicion 0
 " width=2.0, fillcolor = lightskyblue, style = filled ]; 

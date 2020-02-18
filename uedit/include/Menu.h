@@ -22,6 +22,7 @@ class Menu
         void menuEditor(); // metodo que desplega la interfaz del editor
         void metodoBuscarRemplazar(WINDOW* win,cursor* p); // funcion ctrl+w
         void repintarEditor();//metodo que repinta el editor con el texto de la lista
+        void metodoReportes(WINDOW* win,cursor* p); //funcion ctrl+c
 
 
     protected:

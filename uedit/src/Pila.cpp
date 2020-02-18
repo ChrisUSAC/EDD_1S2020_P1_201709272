@@ -122,8 +122,8 @@ void Pila::escribir()
                 {
                     string identificadorr = std::to_string(id);
                     archivo<<identificadorr+"[label = " + "\""
-                     +"Palabra Buscada "+ aux->palabraRemp+"\n" // aux->palabraBus
-                     +"Remplazada Por "+aux->palabraBus+"\n"
+                     +"Palabra Buscada "+ aux->palabraBus+"\n" // aux->palabraBus
+                     +"Remplazada Por "+aux->palabraRemp+"\n"
                      +"Estado "+aux->estado+"\n"
                      +"Palabra "+aux->palabra+"\n"
                      +"Posicion "+to_string(aux->posicion)+"\n"
@@ -133,8 +133,8 @@ void Pila::escribir()
                 {
                     string identificadorr = std::to_string(id);
                     archivo<<identificadorr+"[label = " + "\""
-                     +"Palabra Buscada "+ aux->palabraRemp+"\n"
-                     +"Remplazada Por "+aux->palabraBus+"\n"
+                     +"Palabra Buscada "+ aux->palabraBus+"\n"
+                     +"Remplazada Por "+aux->palabraRemp+"\n"
                      +"Estado "+aux->estado+"\n"
                      +"Palabra "+aux->palabra+"\n"
                      +"Posicion "+to_string(aux->posicion)+"\n"
@@ -219,8 +219,8 @@ void Pila::escribir2()
                 {
                     string identificadorr = std::to_string(id);
                     archivo<<identificadorr+"[label = " + "\""
-                     +"Palabra Buscada "+ aux->palabraRemp+"\n"//aux->palabraBus
-                     +"Remplazada Por "+aux->palabraBus+"\n"
+                     +"Palabra Buscada "+ aux->palabraBus+"\n"//aux->palabraBus
+                     +"Remplazada Por "+aux->palabraRemp+"\n"
                      +"Estado "+aux->estado+"\n"
                      +"Palabra "+aux->palabra+"\n"
                      +"Posicion "+to_string(aux->posicion)+"\n"
@@ -230,8 +230,8 @@ void Pila::escribir2()
                 {
                     string identificadorr = std::to_string(id);
                     archivo<<identificadorr+"[label = " + "\""
-                     +"Palabra Buscada "+ aux->palabraRemp+"\n"
-                     +"Remplazada Por "+aux->palabraBus+"\n"
+                     +"Palabra Buscada "+ aux->palabraBus+"\n"
+                     +"Remplazada Por "+aux->palabraRemp+"\n"
                      +"Estado "+aux->estado+"\n"
                      +"Palabra "+aux->palabra+"\n"
                      +"Posicion "+to_string(aux->posicion)+"\n"

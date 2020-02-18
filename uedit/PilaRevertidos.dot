@@ -1,8 +1,8 @@
 digraph p{ 
 rankdir=LR 
 node[ shape = box] 
-0[label = "Palabra Buscada a
-Remplazada Por 1
+0[label = "Palabra Buscada bebe
+Remplazada Por chiquita
 
 Estado Revertido
 Palabra NULL
