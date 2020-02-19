@@ -8,6 +8,8 @@ Pila* CambiosRealizados = new Pila();
 Pila* CambiosRevertidos = new Pila();
 static int idInsercion = 0;
 
+static ListaC* circular = new ListaC(); // guarda los archivos
+
 //---------------------------------------------------------------------------------------------
 //metodo constructor
 Menu::Menu()
@@ -109,17 +111,31 @@ void Menu::menuPrincipal()
     }
     else if(remarcar==1)
     {
-        //desplegar menu abrir archivos
+        ListaCaracteres->resetear();
+        ListaCaracteres->insertarFinal(' ',"4");
+        system("cls");
+        string direccion;
+        cout<<"Direccion Completa del Archivo: "<<endl;
+        cin>>direccion;
+        lectura(direccion);
+        repintarEditor();
 
     }
     else if(remarcar==2)
     {
         //desplegar menu archivos recientes
+        system("cls");
+        cout<<"Archivos abiertos Recientemente: "<<endl;
+        circular->imprimir();
+        circular->graficar();
+        system("pause");
+        menuPrincipal();
 
     }
     else if(remarcar==3)
     {
         //finalizar aplicacion
+        system("exit");
     }
 
 }
@@ -560,4 +576,32 @@ void Menu::metodoReportes(WINDOW* win, cursor* p)
 
         wrefresh(win);
     }
+}
+//---------------------------------------------------------------------------------------------------------------------
+void Menu::lectura(string direccion)
+{
+    ifstream archivo;
+    string texto;
+
+    archivo.open(direccion,ios::in); // abrir el archivo en modo lectura
+
+    if(archivo.fail())
+    {
+        //no se pudo abrir
+    }
+    else
+    {
+        while(!archivo.eof()) // mientras no sea el final del archivo
+        {
+            getline(archivo,texto);
+        }
+        //rellenar la lista cuando salga del while
+        for(int i = 0; i<texto.length();i++)
+        {
+            ListaCaracteres->insertarFinal(texto[i],to_string(i));
+        }
+        circular->insertarFinal(direccion,""); // se agrega a la lista simple circular
+
+    }
+    archivo.close(); //cerrar el archivo
 }
