@@ -1,11 +1,11 @@
 digraph G{ 
 rankdir=LR 
 node[ shape = box] 
-0[label = "C:\Users\cris\Desktop\m.txt
+0[label = "C:\\Users\\cris\\Desktop\\m.txt
 " width=2.0 , fillcolor=red ,style = filled]; 
-1[label = "C:\Users\cris\Desktop\p.txt
+1[label = "guardados\.txt
 " width=2.0 , fillcolor=red ,style = filled]; 
-2[label = "C:\Users\cris\Desktop\pp.txt
+2[label = "guardados\final.txt
 " width=2.0 , fillcolor=red ,style = filled]; 
 0 -> 1 
 1 -> 2 

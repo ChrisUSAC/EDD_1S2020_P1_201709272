@@ -36,7 +36,7 @@
 	<iostream>
 	<fstream>
 
-1582075741 c:\users\cris\desktop\practica1\repositorio\uedit\include\menu.h
+1582083469 c:\users\cris\desktop\practica1\repositorio\uedit\include\menu.h
 	<iostream>
 	<curses.h>
 	<string>
@@ -49,7 +49,7 @@
 	<fstream>
 	<ListaC.h>
 
-1582080534 source:c:\users\cris\desktop\practica1\repositorio\uedit\src\menu.cpp
+1582086180 source:c:\users\cris\desktop\practica1\repositorio\uedit\src\menu.cpp
 	"Menu.h"
 	"cursor.h"
 

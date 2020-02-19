@@ -28,6 +28,7 @@ class Menu
         void metodoBuscarRemplazar(WINDOW* win,cursor* p); // funcion ctrl+w
         void repintarEditor();//metodo que repinta el editor con el texto de la lista
         void metodoReportes(WINDOW* win,cursor* p); //funcion ctrl+c
+        void metodoGuardar(string nombre); //funcion ctrl+s
 
         void lectura(string direccion);
 

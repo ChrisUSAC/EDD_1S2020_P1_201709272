@@ -1,5 +1,53 @@
 digraph G{ 
 rankdir=LR 
 node[ shape = box] 
-0[label = " " width=2.0 ]; 
+0[label = "d" width=2.0 ]; 
+1[label = "s" width=2.0 ]; 
+2[label = "k" width=2.0 ]; 
+3[label = "j" width=2.0 ]; 
+4[label = "n" width=2.0 ]; 
+5[label = "d" width=2.0 ]; 
+6[label = "k" width=2.0 ]; 
+7[label = "f" width=2.0 ]; 
+8[label = "j" width=2.0 ]; 
+9[label = "n" width=2.0 ]; 
+10[label = "s" width=2.0 ]; 
+11[label = "d" width=2.0 ]; 
+12[label = " " width=2.0 ]; 
+13[label = "l" width=2.0 ]; 
+14[label = "k" width=2.0 ]; 
+15[label = "l" width=2.0 ]; 
+16[label = "k" width=2.0 ]; 
+0 -> 1[dir = back]; 
+0 -> 1 
+1 -> 2[dir = back]; 
+1 -> 2 
+2 -> 3[dir = back]; 
+2 -> 3 
+3 -> 4[dir = back]; 
+3 -> 4 
+4 -> 5[dir = back]; 
+4 -> 5 
+5 -> 6[dir = back]; 
+5 -> 6 
+6 -> 7[dir = back]; 
+6 -> 7 
+7 -> 8[dir = back]; 
+7 -> 8 
+8 -> 9[dir = back]; 
+8 -> 9 
+9 -> 10[dir = back]; 
+9 -> 10 
+10 -> 11[dir = back]; 
+10 -> 11 
+11 -> 12[dir = back]; 
+11 -> 12 
+12 -> 13[dir = back]; 
+12 -> 13 
+13 -> 14[dir = back]; 
+13 -> 14 
+14 -> 15[dir = back]; 
+14 -> 15 
+15 -> 16[dir = back]; 
+15 -> 16 
 }

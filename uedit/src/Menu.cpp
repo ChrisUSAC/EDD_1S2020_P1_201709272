@@ -135,7 +135,7 @@ void Menu::menuPrincipal()
     else if(remarcar==3)
     {
         //finalizar aplicacion
-        system("exit");
+        exit(-1);
     }
 
 }
@@ -223,6 +223,18 @@ void Menu::menuEditor()
         else if(tecla==19) //ctrl+s  funcion de guardado
         {
 
+            endwin(); // destruye la ventana
+            system("cls");
+            string nombre;
+            cout<<"Guardar: "<<endl;
+            getline(cin,nombre);
+            cout<<"guardando... "<<endl;
+            metodoGuardar(nombre);
+            system("pause");
+            //metodo que guarda recibiendo nombre por parametro
+
+            repintarEditor();
+
         }
         else if(tecla==24) //ctrl+x  funcion de escape
         {
@@ -245,8 +257,8 @@ void Menu::menuEditor()
                 {
                     CambiosRevertidos->push(aux->palabraBus,aux->palabraRemp,"Revertido","NULL",0);
                 }
-                ListaCaracteres->graficar();
-                CambiosRevertidos->graficar2();
+                //ListaCaracteres->graficar();
+                //CambiosRevertidos->graficar2();
             }
             endwin(); // destruye la ventana
             //abrir la ventana con los caracteres de la lista y los remplazos
@@ -273,8 +285,8 @@ void Menu::menuEditor()
                     }
 
                 }
-                ListaCaracteres->graficar();
-                CambiosRealizados->graficar();
+                //ListaCaracteres->graficar();
+                //CambiosRealizados->graficar();
             }
             endwin(); // destruye la ventana
             //abrir la ventana con los caracteres de la lista y los remplazos
@@ -342,7 +354,6 @@ void Menu::metodoBuscarRemplazar(WINDOW* win,cursor* p)
     }
     CambiosRealizados->push(buscar,remplazar,"No Revertido","NULL",0); //push a la pila de cambios realizados
     ListaCaracteres->buscarRemplazar(buscar,remplazar); //llamada al metodo buscar y remplazar
-    ListaCaracteres->graficar();
 }
 //---------------------------------------------------------------------------------------------
 void Menu::repintarEditor()
@@ -451,6 +462,18 @@ void Menu::repintarEditor()
         else if(tecla==19) //ctrl+s  funcion de guardado
         {
 
+            endwin(); // destruye la ventana
+            system("cls");
+            string nombre;
+            cout<<"Guardar: "<<endl;
+            getline(cin,nombre);
+            cout<<"guardando... "<<endl;
+            metodoGuardar(nombre);
+            system("pause");
+            //metodo que guarda recibiendo nombre por parametro
+
+            repintarEditor();
+
         }
         else if(tecla==24) //ctrl+x  funcion de escape
         {
@@ -473,8 +496,8 @@ void Menu::repintarEditor()
                 {
                     CambiosRevertidos->push(aux->palabraBus,aux->palabraRemp,"Revertido","NULL",0);
                 }
-                ListaCaracteres->graficar();
-                CambiosRevertidos->graficar2();
+                //ListaCaracteres->graficar();
+                //CambiosRevertidos->graficar2();
             }
             endwin(); // destruye la ventana
             //abrir la ventana con los caracteres de la lista y los remplazos
@@ -501,8 +524,8 @@ void Menu::repintarEditor()
                     }
 
                 }
-                ListaCaracteres->graficar();
-                CambiosRealizados->graficar();
+                //ListaCaracteres->graficar();
+               // CambiosRealizados->graficar();
             }
             endwin(); // destruye la ventana
             //abrir la ventana con los caracteres de la lista y los remplazos
@@ -577,6 +600,7 @@ void Menu::metodoReportes(WINDOW* win, cursor* p)
         wrefresh(win);
     }
 }
+
 //---------------------------------------------------------------------------------------------------------------------
 void Menu::lectura(string direccion)
 {
@@ -604,4 +628,46 @@ void Menu::lectura(string direccion)
 
     }
     archivo.close(); //cerrar el archivo
+}
+//----------------------------------------------------------------------------------------------------------------------
+void Menu::metodoGuardar(string nombre)
+{
+    string line = "";
+    ofstream archivo; //variable que facilita la lectura del archivo
+    string rutaRelativa = "guardados\\"+nombre+".txt"; //modelo para ejecucion en codeblocks
+
+    const char *rutaR = rutaRelativa.c_str(); // se para el string a const char para el metodo open
+
+    //abre el archivo
+    archivo.open(rutaR, ios::out);
+
+    if(archivo.fail())
+    {
+        //cout<<"Error, no se encontro el archivo"<<endl;
+
+    }
+    else
+    {
+    //escribir en el archivo
+    NodoListaDoble *aux = ListaCaracteres->primero;
+
+    if(ListaCaracteres->estaVacia())
+    {
+        //cout<<"la lista esta vacia"<<endl;
+    }
+    else
+    {
+        while(aux!=0)
+        {
+            archivo<<aux->c; // insertar el caracter
+            aux = aux->sig;
+        }
+    }
+
+    //guardar en la circular de archivos recientes
+    circular->insertarFinal(rutaRelativa,nombre);
+    }
+
+
+    archivo.close();//cierra el archivo
 }

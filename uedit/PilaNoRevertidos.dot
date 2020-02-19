@@ -1,8 +1,9 @@
 digraph p{ 
 rankdir=LR 
 node[ shape = box] 
-0[label = "Palabra Buscada martes
-Remplazada Por miercoles
+0[label = "Palabra Buscada ssdask
+
+Remplazada Por ssdask
 
 Estado No Revertido
 Palabra NULL

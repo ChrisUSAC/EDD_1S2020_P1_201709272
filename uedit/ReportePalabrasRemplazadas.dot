@@ -1,7 +1,8 @@
 digraph G{ 
 rankdir=LR 
 node[ shape = box] 
-0[label = "miercoles
+0[label = "ssdask
 
-Remplazado a: martes" width=2.0 , fillcolor=green ,style = filled]; 
+Remplazado a: ssdask
+" width=2.0 , fillcolor=green ,style = filled]; 
 }
